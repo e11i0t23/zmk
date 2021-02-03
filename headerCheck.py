@@ -1,4 +1,7 @@
 #!/usr/bin/env python3
+# Copyright (c) 2021 Elliot Powell
+# SPDX-License-Identifier: MIT
+
 import sys, os, re, datetime, getopt
 class colours:
     HEADER = '\033[95m'
