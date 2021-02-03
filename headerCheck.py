@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 # Copyright (c) 2021 Elliot Powell
 # SPDX-License-Identifier: MIT
-
 import sys, os, re, datetime, getopt
 class colours:
     HEADER = '\033[95m'
@@ -38,8 +37,8 @@ def isIgnored(name):
 for newlyAddedFile in newlyAddedFiles:
     if isIgnored(newlyAddedFile): continue
     # check only first 5 lines of the file
-    if os.popen(f'head -5 {newlyAddedFile} | grep -L "Copyright (c) {year}" '): noCopyright.append(newlyAddedFile)
-    if os.popen(f'head -5 {newlyAddedFile} | grep -L "SPDX-License-Identifier: MIT" '): noSPDX.append(newlyAddedFile)
+    if os.popen(f'head -5 {newlyAddedFile} | grep -L "Copyright (c) {year}" ').read(): noCopyright.append(newlyAddedFile)
+    if os.popen(f'head -5 {newlyAddedFile} | grep -L "SPDX-License-Identifier: MIT" ').read(): noSPDX.append(newlyAddedFile)
     
 if (not noCopyright) & (not noSPDX):
     print("All headers correct on newly added files")
