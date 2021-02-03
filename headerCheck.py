@@ -1,5 +1,15 @@
 #!/usr/bin/env python3
 import sys, os, re, datetime, getopt
+class colours:
+    HEADER = '\033[95m'
+    OKBLUE = '\033[94m'
+    OKCYAN = '\033[96m'
+    OKGREEN = '\033[92m'
+    WARNING = '\033[93m'
+    FAIL = '\033[91m'
+    ENDC = '\033[0m'
+    BOLD = '\033[1m'
+    UNDERLINE = '\033[4m'
 
 year = datetime.datetime.now().year 
 regexIgnored = ["\.yaml", "\.md", "\.json", "\.yml"]
@@ -34,11 +44,11 @@ if (not noCopyright) & (not noSPDX):
 else:
     print("Incorrect File Headers Found on newly added files")
     if noCopyright:
-        print(f"Copyright (c) {year} YOUR NAME license header not found in the following newly added files:")
+        print(f"{colours.FAIL}Copyright (c) {year} YOUR NAME license header not found in the following newly added files:{colours.ENDC}")
         for file in noCopyright:
             print(f"  -  {file}")
     if noSPDX:
-        print(f"SPDX-License-Identifier: MIT license header not found in the following newly added files:")
+        print(f"{colours.FAIL}SPDX-License-Identifier: MIT license header not found in the following newly added files:{colours.ENDC}")
         for file in noSPDX:
             print(f"  -  {file}")
-    sys.exit(1)
+    sys.exit("Failed, See log for more details")
