@@ -4,9 +4,9 @@
 import sys, os, re, datetime, getopt
 
 # REGEX FILE EXTENSTIONS FOR /*...*/ FORMATED COPYRIGHT
-headerOneFiles = ["\.c", "\.h", "\.keymap", "\.dts"]
+headerOneFiles = ["\.c", "\.h", "\.keymap", "\.dts", "\.overlay", "\.dtsi"]
 # REGEX STRINGS FOR ANY FILES WHICH SHOULD BE IGNORED FROM CHECKING
-regexIgnored = ["\.yaml", "\.md", "\.json", "\.yml"] 
+regexIgnored = ["\.yaml", "\.md", "\.json", "\.yml", "\.js", "ignore", "\.prettier", "\.toml"] 
 
 # COLOURS FOR OUTPUT FORMATIING
 class colours:
