@@ -69,7 +69,7 @@ def main():
 
     for modifiedFile in modifiedFiles:
         if isIgnored(modifiedFile): continue
-        check("n", modifiedFile)
+        check("m", modifiedFile)
 
         
     if (not incorrectFiles):
