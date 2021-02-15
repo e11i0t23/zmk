@@ -1,0 +1,14 @@
+name: Header Checks
+
+on: [push, pull_request]
+
+jobs:
+  check_file_headers:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: "3.6"
+      - run: git fetch --no-tags --prune --depth=1 origin +refs/heads/*:refs/remotes/origin/*
+      - run: python headerCheck.py --main
