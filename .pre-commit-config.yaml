@@ -10,3 +10,10 @@ repos:
     rev: v2.2.1
     hooks:
       - id: prettier
+  - repo: local
+    hooks:
+      - id: headercheck
+        name: Header Check
+        language_version: "3.9"
+        language: python
+        entry: python3 ./headerCheck.py
