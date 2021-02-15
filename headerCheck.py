@@ -29,8 +29,8 @@ toCheck = "origin/main HEAD" if "--main" in sys.argv else "--cached"
 
 newlyAddedFiles=os.popen(f"git diff --name-only --diff-filter=A {toCheck}").read().split("\n")[:-1]
 modifiedFiles=os.popen(f"git diff --name-only --diff-filter=M {toCheck}").read().split("\n")[:-1]
-print("Newly added files: ", newlyAddedFiles)
-print("Modified Files: ", modifiedFiles)
+#print("Newly added files: ", newlyAddedFiles)
+#print("Modified Files: ", modifiedFiles)
 
 # function to check wether a file should be ignored when checking
 def isIgnored(name):
