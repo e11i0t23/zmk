@@ -1,4 +1,4 @@
-# Copyright (c) 2020 The ZMK Contributors
+# Copyright (c) 2021 Elliot Powell
 # SPDX-License-Identifier: MIT
 
 config BOARD_ENABLE_DCDC
