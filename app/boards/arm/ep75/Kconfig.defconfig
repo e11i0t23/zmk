@@ -1,6 +1,6 @@
-# DZ60RGB keyboard configuration
+# EP75 keyboard configuration
 
-# Copyright (c) 2020 The ZMK Contributors
+# Copyright (c) 2021 Elliot Powell
 # SPDX-License-Identifier: MIT
 
 if BOARD_EP75_REV1
@@ -25,6 +25,9 @@ config ZMK_BLE
 	default y
 
 config ZMK_USB
+	default y
+
+config ZMK_BATTERY_VOLTAGE_DIVIDER
 	default y
 
 endif # BOARD_EP75_REV1
